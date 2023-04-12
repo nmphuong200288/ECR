@@ -1,10 +1,10 @@
 pipeline {
     agent any
     environment {
-        AWS_ACCOUNT_ID="120717539064"
-        AWS_DEFAULT_REGION="us-west-2"
-        IMAGE_REPO_NAME="sample"
-        IMAGE_TAG="v1"
+        AWS_ACCOUNT_ID="835776587202"
+        AWS_DEFAULT_REGION="ap-southeast-2"
+        IMAGE_REPO_NAME="jenkin-pipeline-build-demo"
+        IMAGE_TAG="latest"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
     }
    
@@ -21,7 +21,7 @@ pipeline {
         
         stage('Cloning Git') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/sd031/aws_codebuild_codedeploy_nodeJs_demo.git']]])     
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '131bcdad-2847-47dc-ac4c-b1e3fc90b90b', url: 'https://github.com/nmphuong200288/ECR.git']])     
             }
         }
   
