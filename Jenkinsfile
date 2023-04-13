@@ -45,7 +45,7 @@ pipeline {
          }
         }
       }
-    stage ('Deploy') {
+    /*stage ('Deploy') {
         steps {
             script {
             sh "echo 'Starting to deploy docker image'.."
@@ -54,5 +54,5 @@ pipeline {
             //sh "docker run -d -p 8084:8084 $DOCKER_IMAGE"
             }  
         }
-    }
+    }*/
 }
