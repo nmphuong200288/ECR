@@ -49,7 +49,7 @@ pipeline {
         script {
            sh "echo Starting to deploy docker image.."
            sh "docker stop $(docker ps -q)"
-           sh "docker rm $(docker ps -a -q)"
+           sh "docker rm -f $(docker ps -aq)"
            sh "docker run -d -p 3000:3000 $DOCKER_IMAGE"
         }
      }
