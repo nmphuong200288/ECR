@@ -47,7 +47,7 @@ pipeline {
       }
     stage ('Deploy') {
         steps {
-            sh 'scp deploy.sh ${REMOTE_USER}@${REMOTE_HOST}:/home/ubuntu/'
+            sh 'cp deploy.sh /home/ubuntu/'
             sh 'chmod +x deploy.sh'
             sh './deploy.sh'
         }  
