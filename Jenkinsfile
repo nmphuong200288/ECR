@@ -45,14 +45,4 @@ pipeline {
          }
         }
       }
-    /*stage ('Deploy') {
-        steps {
-            script {
-            sh "echo 'Starting to deploy docker image'.."
-            sh "docker pull ${IMAGE_REPO_NAME}:$IMAGE_TAG"
-            //sh "docker ps -q --filter ancestor=$DOCKER_IMAGE | xargs -r docker stop"
-            //sh "docker run -d -p 8084:8084 $DOCKER_IMAGE"
-            }  
-        }*/
-    }
 }
