@@ -48,7 +48,6 @@ pipeline {
      steps {
         script {
            sh "echo Starting to deploy docker image.."
-           sh "docker pull $DOCKER_IMAGE"
         }
      }
     }
