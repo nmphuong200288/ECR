@@ -48,7 +48,7 @@ pipeline {
         script {
            sh "echo Starting to deploy docker image.."
            DOCKER_IMAGE=nginx
-           docker pull $DOCKER_IMAGE
+           sh "docker pull $DOCKER_IMAGE"
         }
      }
     }
