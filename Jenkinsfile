@@ -47,6 +47,8 @@ pipeline {
      steps {
         script {
            sh "echo Starting to deploy docker image.."
+           DOCKER_IMAGE=nginx
+           docker pull $DOCKER_IMAGE
         }
      }
     }
