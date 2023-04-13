@@ -49,7 +49,7 @@ pipeline {
         steps {
             sh 'sudo su -'
             sh 'cd /var/lib/jenkins/workspace/JenkinDockerBuildPipeline'
-            sh 'sudo cp deploy.sh /home/ubuntu/'
+            sh 'cp deploy.sh /home/ubuntu/'
             sh 'chmod +x deploy.sh'
             sh './deploy.sh'
         }  
