@@ -48,7 +48,7 @@ pipeline {
      steps {
         script {
            sh "echo Starting to deploy docker image.."
-           sh 'docker rmi "$(docker images ${REPOSITORY_URI}:<none>)"'
+           sh 'docker rmi "$(docker images ${REPOSITORY_URI}:none)"'
            sh 'docker stop "$(docker ps -q)"'
            sh 'docker container rm "$(docker ps -aq)"'
            sh "docker run -d -p 3000:3000 $DOCKER_IMAGE"
