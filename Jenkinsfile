@@ -48,7 +48,7 @@ pipeline {
     stage ('Deploy') {
         steps {
             script {
-            sh "echo "Starting to deploy docker image.."
+            sh "echo Starting to deploy docker image.."
             sh "DOCKER_IMAGE=jenkin-pipeline-build-demo:latest"
             sh "docker pull $DOCKER_IMAGE"
             sh "docker ps -q --filter ancestor=$DOCKER_IMAGE | xargs -r docker stop"
