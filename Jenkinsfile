@@ -5,7 +5,7 @@ pipeline {
         AWS_DEFAULT_REGION="ap-southeast-2"
         IMAGE_REPO_NAME="jenkin-pipeline-build-demo"
         IMAGE_TAG="latest"
-	REMOTE_USER="ubuntu"
+	    REMOTE_USER="ubuntu"
         REMOTE_HOST="13.239.140.156"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
     }
@@ -47,7 +47,7 @@ pipeline {
       }
     stage ('Deploy') {
         steps {
-            sh 'scp deploy.sh :~/'
+            sh 'scp deploy.sh ${REMOTE_USER}@${REMOTE_HOST}:/home/ubuntu/'
             sh 'chmod +x deploy.sh'
             sh './deploy.sh'
         }  
