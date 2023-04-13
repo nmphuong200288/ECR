@@ -5,6 +5,7 @@ pipeline {
         AWS_DEFAULT_REGION="ap-southeast-2"
         IMAGE_REPO_NAME="jenkin-pipeline-build-demo"
         IMAGE_TAG="latest"
+        DOCKER_IMAGE="nginx"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
     }
    
@@ -47,7 +48,6 @@ pipeline {
      steps {
         script {
            sh "echo Starting to deploy docker image.."
-           DOCKER_IMAGE=nginx
            sh "docker pull $DOCKER_IMAGE"
         }
      }
