@@ -53,6 +53,6 @@ pipeline {
             //sh "docker ps -q --filter ancestor=$DOCKER_IMAGE | xargs -r docker stop"
             //sh "docker run -d -p 8084:8084 $DOCKER_IMAGE"
             }  
-        }
-    }*/
+        }*/
+    }
 }
