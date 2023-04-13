@@ -47,7 +47,6 @@ pipeline {
       }
     stage ('Deploy') {
         steps {
-            sh 'sudo cp deploy.sh /home/ubuntu/'
             sh 'sudo chmod +x deploy.sh'
             sh 'sudo ./deploy.sh'
         }  
