@@ -45,7 +45,9 @@ pipeline {
         }
     stage('Deploy to Server') {
      steps {
-        echo "Starting to deploy docker image.."
+        script {
+           sh "echo Starting to deploy docker image.."
+        }
      }
     }
   }
