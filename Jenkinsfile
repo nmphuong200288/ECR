@@ -52,4 +52,5 @@ pipeline {
             sh 'ssh ${REMOTE_USER}@${REMOTE_HOST} ./deploy.sh'
         }  
     }
+  }
 }
