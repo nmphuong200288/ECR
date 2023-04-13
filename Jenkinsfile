@@ -49,7 +49,6 @@ pipeline {
         steps {
             script {
             sh "echo "Starting to deploy docker image.."
-            sh "aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"
             sh "DOCKER_IMAGE=jenkin-pipeline-build-demo:latest"
             sh "docker pull $DOCKER_IMAGE"
             sh "docker ps -q --filter ancestor=$DOCKER_IMAGE | xargs -r docker stop"
