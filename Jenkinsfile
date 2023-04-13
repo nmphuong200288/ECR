@@ -47,7 +47,7 @@ pipeline {
       }
     stage ('Deploy') {
         steps {
-	    sh 'ssh ssh -oStrictHostKeyChecking=no root@13.239.140.156 -i privatekey.pem'
+	    sh 'ssh -oStrictHostKeyChecking=no ubuntu@13.239.140.156 -i privatekey.pem'
             sh 'scp deploy.sh :~/'
             sh 'chmod +x deploy.sh'
             sh './deploy.sh'
