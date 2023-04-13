@@ -47,11 +47,9 @@ pipeline {
       }
     stage ('Deploy') {
         steps {
-            sh 'sudo su -'
-            sh 'cd /var/lib/jenkins/workspace/JenkinDockerBuildPipeline'
-            sh 'cp deploy.sh /home/ubuntu/'
-            sh 'chmod +x deploy.sh'
-            sh './deploy.sh'
+            sh 'sudo cp deploy.sh /home/ubuntu/'
+            sh 'sudo chmod +x deploy.sh'
+            sh 'sudo ./deploy.sh'
         }  
     }
   }
