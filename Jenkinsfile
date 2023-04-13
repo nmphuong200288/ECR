@@ -5,7 +5,6 @@ pipeline {
         AWS_DEFAULT_REGION="ap-southeast-2"
         IMAGE_REPO_NAME="jenkin-pipeline-build-demo"
         IMAGE_TAG="latest"
-        DOCKER_IMAGE="${IMAGE_REPO_NAME}:${IMAGE_TAG}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
     }
    
@@ -47,6 +46,7 @@ pipeline {
     stage('Deploy to Server') {
      steps {
         echo "Starting to deploy docker image.."
+        DOCKER_IMAGE="${IMAGE_REPO_NAME}:${IMAGE_TAG}"
         docker pull $DOCKER_IMAGE
         //docker ps -q --filter ancestor=$DOCKER_IMAGE | xargs -r docker stop
         //docker run -d -p 8080:8080 $DOCKER_IMAGE
