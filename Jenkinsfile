@@ -43,5 +43,12 @@ pipeline {
                 }
             }
         }
+    stage('Deploy to Server') {
+     steps {
+        script {
+
+        }
+     }
     }
+  }
 }
