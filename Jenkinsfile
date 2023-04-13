@@ -48,7 +48,7 @@ pipeline {
      steps {
         script {
            sh "echo Starting to deploy docker image.."
-           sh "docker run -d -p 8085:8085 $DOCKER_IMAGE"
+           sh "docker run -d -p 3000:3000 $DOCKER_IMAGE"
         }
      }
     }
