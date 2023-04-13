@@ -46,7 +46,6 @@ pipeline {
     stage('Deploy to Server') {
      steps {
         echo "Starting to deploy docker image.."
-        cd /var/lib/jenkins/workspace
      }
     }
   }
