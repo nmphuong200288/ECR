@@ -4,7 +4,8 @@ pipeline {
         AWS_ACCOUNT_ID="835776587202"
         AWS_DEFAULT_REGION="ap-southeast-2"
         IMAGE_REPO_NAME="jenkin-pipeline-build-demo"
-        IMAGE_TAG="latest"
+        //IMAGE_TAG="latest"
+	IMAGE_TAG="${GIT_BRANCH.tokenize('/').pop()}-${GIT_COMMIT.substring(0,7)}"
         DOCKER_IMAGE="${REPOSITORY_URI}:${IMAGE_TAG}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
     }
