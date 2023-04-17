@@ -4,7 +4,7 @@ pipeline {
         AWS_ACCOUNT_ID="835776587202"
         AWS_DEFAULT_REGION="ap-southeast-2"
         IMAGE_REPO_NAME="jenkin-pipeline-build-demo"
-        IMAGE_TAG="latest1"
+        IMAGE_TAG="latest"
         DOCKER_IMAGE="${REPOSITORY_URI}:${IMAGE_TAG}"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
     }
@@ -48,8 +48,8 @@ pipeline {
      steps {
         script {
            sh "echo Starting to deploy docker image.."
-           sh 'docker stop "$(docker ps -q)"'
-           sh 'docker container rm "$(docker ps -aq)"'
+           //sh 'docker stop "$(docker ps -q)"'
+           //sh 'docker container rm "$(docker ps -aq)"'
            sh "docker run -d -p 3000:3000 $DOCKER_IMAGE"
         }
      }
