@@ -23,7 +23,7 @@ pipeline {
         
         stage('Cloning Git') {
             steps {
-                checkout scmGit(branches: [[name: 'devops/production']], extensions: [], userRemoteConfigs: [[credentialsId: '131bcdad-2847-47dc-ac4c-b1e3fc90b90b', url: 'https://github.com/nmphuong200288/ECR.git']])     
+                checkout scmGit(branches: [[name: 'technical/devops/coder']], extensions: [], userRemoteConfigs: [[credentialsId: '131bcdad-2847-47dc-ac4c-b1e3fc90b90b', url: 'https://github.com/nmphuong200288/ECR.git']])     
             }
         }
   
